@@ -4,4 +4,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Service.Liquidity.InternalWallets.Domain.Models\Service.Liquidity.InternalWallets.Domain.Models.csproj" />
+  </ItemGroup>
+
 </Project>

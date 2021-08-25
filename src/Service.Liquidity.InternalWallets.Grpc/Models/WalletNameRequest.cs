@@ -3,9 +3,8 @@ using System.Runtime.Serialization;
 namespace Service.Liquidity.InternalWallets.Grpc.Models
 {
     [DataContract]
-    public class HelloRequest
+    public class WalletNameRequest
     {
-        [DataMember(Order = 1)]
-        public string Name { get; set; }
+        [DataMember(Order = 1)] public string WalletName { get; set; }
     }
 }

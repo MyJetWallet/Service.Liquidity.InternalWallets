@@ -5,13 +5,16 @@ namespace Service.Liquidity.InternalWallets.Settings
 {
     public class SettingsModel
     {
-        [YamlProperty("Liquidity.InternalWallets.SeqServiceUrl")]
+        [YamlProperty("InternalWallets.SeqServiceUrl")]
         public string SeqServiceUrl { get; set; }
 
-        [YamlProperty("Liquidity.InternalWallets.ZipkinUrl")]
+        [YamlProperty("InternalWallets.ZipkinUrl")]
         public string ZipkinUrl { get; set; }
 
-        [YamlProperty("Liquidity.InternalWallets.ElkLogs")]
+        [YamlProperty("InternalWallets.ElkLogs")]
         public LogElkSettings ElkLogs { get; set; }
+
+        [YamlProperty("InternalWallets.MyNoSqlWriterUrl")]
+        public string MyNoSqlWriterUrl { get; set; }
     }
 }

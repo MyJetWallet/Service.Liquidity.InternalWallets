@@ -13,6 +13,7 @@ using ProtoBuf.Grpc.Server;
 using Service.Liquidity.InternalWallets.Grpc;
 using Service.Liquidity.InternalWallets.Modules;
 using Service.Liquidity.InternalWallets.Services;
+using Service.Liquidity.InternalWallets.Services.Grpc;
 using SimpleTrading.BaseMetrics;
 using SimpleTrading.ServiceStatusReporterConnector;
 
@@ -50,7 +51,7 @@ namespace Service.Liquidity.InternalWallets
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcSchema<HelloService, IHelloService>();
+                endpoints.MapGrpcSchema<LpWalletService, ILpWalletService>();
 
                 endpoints.MapGrpcSchemaRegistry();
 
