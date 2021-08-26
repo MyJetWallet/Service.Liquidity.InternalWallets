@@ -16,5 +16,11 @@ namespace Service.Liquidity.InternalWallets.Settings
 
         [YamlProperty("InternalWallets.MyNoSqlWriterUrl")]
         public string MyNoSqlWriterUrl { get; set; }
+
+        [YamlProperty("InternalWallets.MyNoSqlReaderHostPort")]
+        public string MyNoSqlReaderHostPort { get; set; }
+
+        [YamlProperty("InternalWallets.BalancesGrpcServiceUrl")]
+        public string BalancesGrpcServiceUrl { get; set; }
     }
 }
