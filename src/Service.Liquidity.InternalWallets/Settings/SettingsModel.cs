@@ -22,5 +22,8 @@ namespace Service.Liquidity.InternalWallets.Settings
 
         [YamlProperty("InternalWallets.BalancesGrpcServiceUrl")]
         public string BalancesGrpcServiceUrl { get; set; }
+
+        [YamlProperty("InternalWallets.ExternalApiGrpcUrl")]
+        public string ExternalApiGrpcUrl { get; set; }
     }
 }

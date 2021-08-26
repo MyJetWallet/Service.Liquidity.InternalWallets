@@ -12,6 +12,7 @@ namespace Service.Liquidity.InternalWallets.Client
             var factory = new InternalWalletsClientFactory(grpcServiceUrl);
 
             builder.RegisterInstance(factory.GetLpWalletService()).As<ILpWalletService>().SingleInstance();
+            builder.RegisterInstance(factory.GetExternalMarketsGrpc()).As<IExternalMarketsGrpc>().SingleInstance();
         }
     }
 }

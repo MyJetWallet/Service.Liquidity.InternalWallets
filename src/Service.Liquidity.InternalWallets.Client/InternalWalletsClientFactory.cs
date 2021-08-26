@@ -12,5 +12,6 @@ namespace Service.Liquidity.InternalWallets.Client
         }
 
         public ILpWalletService GetLpWalletService() => CreateGrpcService<ILpWalletService>();
+        public IExternalMarketsGrpc GetExternalMarketsGrpc() => CreateGrpcService<IExternalMarketsGrpc>();
     }
 }

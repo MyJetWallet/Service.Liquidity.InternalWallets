@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Core;
 using Autofac.Core.Registration;
+using MyJetWallet.Domain.ExternalMarketApi;
 using MyJetWallet.Sdk.NoSql;
 using Service.Balances.Client;
 using Service.Liquidity.InternalWallets.Domain.Models;
@@ -25,6 +26,8 @@ namespace Service.Liquidity.InternalWallets.Modules
             builder.RegisterMyNoSqlWriter<LpWalletNoSql>(Program.ReloadedSettings(e => e.MyNoSqlWriterUrl), LpWalletNoSql.TableName);
             
             builder.RegisterBalancesClients(Program.Settings.BalancesGrpcServiceUrl, myNoSqlClient);
+            
+            builder.RegisterExternalMarketClient(Program.Settings.ExternalApiGrpcUrl);
         }
     }
 }

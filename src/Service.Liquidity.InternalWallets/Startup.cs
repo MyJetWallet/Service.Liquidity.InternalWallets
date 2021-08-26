@@ -52,6 +52,7 @@ namespace Service.Liquidity.InternalWallets
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcSchema<LpWalletService, ILpWalletService>();
+                endpoints.MapGrpcSchema<ExternalMarketsGrpc, IExternalMarketsGrpc>();
 
                 endpoints.MapGrpcSchemaRegistry();
 
