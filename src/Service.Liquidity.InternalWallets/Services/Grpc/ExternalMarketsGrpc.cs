@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using MyJetWallet.Domain.ExternalMarketApi;
 using MyJetWallet.Domain.ExternalMarketApi.Dto;
@@ -38,7 +39,10 @@ namespace Service.Liquidity.InternalWallets.Services.Grpc
                 ExchangeName = request.Source
             });
 
-            var result = data.Balances.Select(e => new AssetBalanceDto(e.Symbol, (double)e.Balance, (double)e.Free)).ToList();
+            var result = data?.Balances
+                ?.Select(e => new AssetBalanceDto(e.Symbol, (double)e.Balance, (double)e.Free))
+                .ToList()
+                ?? new List<AssetBalanceDto>();
 
             return GrpcResponseWithData<GrpcList<AssetBalanceDto>>.Create(GrpcList<AssetBalanceDto>.Create(result));
         }
